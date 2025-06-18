@@ -1,10 +1,12 @@
-name: Destroy EC2 Infrastructure
+name: Deploy EC2
 
 on:
-  workflow_dispatch:  # Manual trigger from GitHub UI
+  push:
+    branches:
+      - main
 
 jobs:
-  destroy:
+  terraform:
     runs-on: ubuntu-latest
 
     env:
@@ -21,5 +23,9 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
-      - name: Terraform Destroy
-        run: terraform destroy -auto-approve
+      - name: Terraform Plan
+        run: terraform plan
+
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
+
