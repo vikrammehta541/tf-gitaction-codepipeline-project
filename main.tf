@@ -9,6 +9,7 @@ resource "aws_instance" "web" {
   }
 }
 
+/*
 # create a ec2 instance
 resource "aws_instance" "beb1" {
   ami           = "ami-0742b4e673072066f"  # Amazon Linux 2 (us-east-1)
@@ -29,3 +30,4 @@ resource "aws_instance" "Alb1" {
     Name = "EC2-103"
   }
 }
+*/
